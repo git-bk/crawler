@@ -3,7 +3,7 @@
   <groupId>com.biki</groupId>
   <artifactId>crawler</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
+  <packaging>jar</packaging>
   <description>web crawler</description>
   
   <properties>
@@ -12,249 +12,17 @@
  	</properties>
 	
   <dependencies>
-  <!-- WebCollector 网页爬虫 -->
+  	<!-- crawler4j -->
   	<dependency>
-        <groupId>cn.edu.hfut.dmic.webcollector</groupId>
-        <artifactId>WebCollector</artifactId>
-        <version>2.09</version>
+        <groupId>edu.uci.ics</groupId>
+        <artifactId>crawler4j</artifactId>
+        <version>4.1</version>
     </dependency>
-    
-  <!-- spring -->
-  	<dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-            <version>${spring.version}</version>
-    </dependency>
-    
-	<dependency>  
-	    <groupId>org.springframework</groupId>  
-	    <artifactId>spring-webmvc</artifactId>  
-	    <version>${spring.version}</version>  
-	</dependency>  
-  
-	<dependency>  
-	    <groupId>org.springframework</groupId>  
-	    <artifactId>spring-jdbc</artifactId>  
-	    <version>${spring.version}</version>  
-	</dependency>  
-	  
-	<dependency>  
-	    <groupId>org.springframework</groupId>  
-	    <artifactId>spring-context</artifactId>  
-	    <version>${spring.version}</version>  
-	</dependency>  
-	  
-	<dependency>  
-	    <groupId>org.springframework</groupId>  
-	    <artifactId>spring-aop</artifactId>  
-	    <version>${spring.version}</version>  
-	</dependency>  
-	  
-	<dependency>  
-	    <groupId>org.springframework</groupId>  
-	    <artifactId>spring-core</artifactId>  
-	    <version>${spring.version}</version>  
-	</dependency>  
-	  
-	<dependency>  
-	    <groupId>org.springframework</groupId>  
-	    <artifactId>spring-test</artifactId>  
-	    <version>${spring.version}</version>  
-	</dependency> 
-	
-	<!-- spring security 登录和授权-->
-	<dependency>  
-	    <groupId>org.springframework.security</groupId>  
-	    <artifactId>spring-security-core</artifactId>  
-	    <version>${spring.version}</version>  
-	</dependency>  
-	
-	<dependency>  
-	    <groupId>org.springframework.security</groupId>  
-	    <artifactId>spring-security-web</artifactId>  
-	    <version>${spring.version}</version>  
-	</dependency>  
-	
-	<dependency>  
-	    <groupId>org.springframework.security</groupId>  
-	    <artifactId>spring-security-config</artifactId>  
-	    <version>${spring.version}</version>  
-	</dependency>  
-	
-	<!-- Logging -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>${org.slf4j-version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>jcl-over-slf4j</artifactId>
-			<version>${org.slf4j-version}</version>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>${org.slf4j-version}</version>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.15</version>
-			<exclusions>
-				<exclusion>
-					<groupId>javax.mail</groupId>
-					<artifactId>mail</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>javax.jms</groupId>
-					<artifactId>jms</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>com.sun.jdmk</groupId>
-					<artifactId>jmxtools</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>com.sun.jmx</groupId>
-					<artifactId>jmxri</artifactId>
-				</exclusion>
-			</exclusions>
-			<scope>runtime</scope>
-		</dependency>
-		
-		<!-- mybatis -->
-		 <dependency>  
-            <groupId>org.mybatis</groupId>  
-            <artifactId>mybatis</artifactId>  
-            <version>3.2.6</version>  
-        </dependency>  
-        
-        <!-- mybatis/spring包 -->  
-        <dependency>  
-            <groupId>org.mybatis</groupId>  
-            <artifactId>mybatis-spring</artifactId>  
-            <version>1.2.2</version>  
-        </dependency>   
-        
-        <!-- 导入Mysql数据库链接jar包 -->  
-        <dependency>  
-            <groupId>mysql</groupId>  
-            <artifactId>mysql-connector-java</artifactId>  
-            <version>5.1.30</version>  
-        </dependency>  
-        <!-- 导入dbcp的jar包，用来在applicationContext.xml中配置数据库 -->  
-        <dependency>  
-            <groupId>commons-dbcp</groupId>  
-            <artifactId>commons-dbcp</artifactId>  
-            <version>1.2.2</version>  
-        </dependency>  
-        
-        <!-- velocity -->
-        <dependency>  
-            <groupId>org.apache.velocity</groupId>  
-            <artifactId>velocity</artifactId>  
-            <version>1.7</version>  
-        </dependency>  
-        
-        <dependency>  
-            <groupId>org.apache.velocity</groupId>  
-            <artifactId>velocity-tools</artifactId>  
-            <version>2.0</version>  
-        </dependency> 
-        
-        <!-- json数据请求相关 -->
-        <dependency>  
-		    <groupId>org.codehaus.jackson</groupId>  
-		    <artifactId>jackson-core-asl</artifactId>  
-		    <version>1.8.4</version>  
-		</dependency>  
-		<dependency>  
-		    <groupId>org.codehaus.jackson</groupId>  
-		    <artifactId>jackson-mapper-asl</artifactId>  
-		    <version>1.8.4</version>  
-		</dependency>  
-		
-		<dependency>
-				<groupId>net.sf.json-lib</groupId>
-				<artifactId>json-lib</artifactId>
-				<version>2.4</version>
-				<classifier>jdk15</classifier>  
-			</dependency>
-		
-	<dependency> 
-        <groupId>com.alibaba</groupId>  
-        <artifactId>fastjson</artifactId>  
-        <version>1.1.36</version> 
-      </dependency>
-		
-	 
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-    
-    <dependency>
-	  <groupId>org.testng</groupId>
-	  <artifactId>testng</artifactId>
-	  <version>6.1.1</version>
-	  <scope>test</scope>
-	</dependency>
-    
-    
-    <dependency> 
-        <groupId>org.aspectj</groupId>  
-        <artifactId>aspectjtools</artifactId>  
-        <version>1.6.2</version> 
-      </dependency>  
-      
-      <dependency> 
-		   <groupId>javax.servlet</groupId> 
-		   <artifactId>servlet-api</artifactId> 
-		   <version>2.5</version> 
-		</dependency>
-		
-		<!-- 文件上传 -->
-	<dependency>
-		<groupId>commons-fileupload</groupId>
-		<artifactId>commons-fileupload</artifactId>
-		<version>1.3</version>
-	</dependency> 
-	<dependency>
-	<groupId>org.mybatis.generator</groupId>
-	<artifactId>mybatis-generator-core</artifactId>
-	<version>1.3.2</version>
-</dependency>
+ 
   </dependencies>
   <build>
     	<finalName>crawler</finalName>
         <plugins>
-            <plugin>
-                <groupId>org.mybatis.generator</groupId>
-                <artifactId>mybatis-generator-maven-plugin</artifactId>
-                <version>1.3.2</version>
-                <configuration>
-               		<!--允许移动生成的文件-->
-                    <verbose>true</verbose>
-                    <!--允许覆盖生成的文件-->
-                    <overwrite>true</overwrite>
-                </configuration>
-                <dependencies> 
-		          <dependency> 
-		            <groupId>org.mybatis.generator</groupId>  
-		            <artifactId>mybatis-generator-core</artifactId>  
-		            <version>1.3.2</version> 
-		          </dependency> 
-		          <dependency> 
-		            <groupId>com.biki</groupId>  
-		            <artifactId>crawler</artifactId>  
-		            <version>0.0.1-SNAPSHOT</version> 
-		          </dependency>  
-	        	</dependencies> 
-            </plugin>
             <plugin>  
                 <groupId>org.apache.maven.plugins</groupId>  
                 <artifactId>maven-eclipse-plugin</artifactId>  
@@ -271,8 +39,35 @@
 			        <target>1.7</target>
 					<encoding>UTF-8</encoding>
 			    </configuration>  
-			</plugin>    
-			
+			</plugin> 
+			<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <!-- <addClasspath>true</addClasspath> -->
+                            <mainClass>crawler.BasicCrawlController</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptors>
+                        <descriptor>assembly.xml</descriptor>
+                    </descriptors>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <!-- this is used for inheritance merges -->
+                        <phase>package</phase>
+                        <!-- bind to the packaging phase -->
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>   
+
         </plugins>
   </build>
 </project>
